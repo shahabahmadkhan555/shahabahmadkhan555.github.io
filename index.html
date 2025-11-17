@@ -763,6 +763,84 @@
           .education-details {
             flex-grow: 1;
           }
+        /* ---------------------- */
+        /* PROJECT GRID: 2 PER ROW */
+        /* ---------------------- */
+        .project-list {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
+        }
+        
+        /* PROJECT CARDS */
+        .project-card {
+          cursor: pointer;
+          background: #1e1e1e;
+          padding: 15px;
+          border-radius: 16px;
+          transition: transform 0.2s ease;
+        }
+        
+        .project-card:hover {
+          transform: scale(1.02);
+        }
+        
+        .project-thumb {
+          width: 100%;
+          border-radius: 12px;
+          margin-bottom: 10px;
+        }
+        
+        /* ---------------------- */
+        /* MODAL (POPUP WINDOW) */
+        /* ---------------------- */
+        .modal {
+          display: none;
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.75);
+          backdrop-filter: blur(4px);
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+        }
+        
+        .modal-content {
+          background: #1e1e1e;
+          padding: 25px;
+          width: 500px;
+          max-width: 90%;
+          border-radius: 14px;
+          text-align: center;
+          position: relative;
+        }
+        
+        .modal-img {
+          width: 100%;
+          border-radius: 10px;
+          margin-bottom: 15px;
+        }
+        
+        /* CLOSE BUTTON */
+        .close-modal {
+          position: absolute;
+          top: 12px;
+          right: 18px;
+          font-size: 28px;
+          cursor: pointer;
+        }
+        
+        /* GITHUB BUTTON */
+        .github-btn {
+          display: inline-block;
+          margin-top: 15px;
+          padding: 10px 16px;
+          background: #ffcc00;
+          color: black;
+          border-radius: 8px;
+          font-weight: bold;
+          text-decoration: none;
+        }
           
         </style>
 
