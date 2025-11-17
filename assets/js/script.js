@@ -157,3 +157,55 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+
+// ----------------------------------------------------------
+// 🔥 PROJECT MODAL JS — paste this EXACTLY at the bottom
+// ----------------------------------------------------------
+
+// Select modal elements
+const projectModal = document.getElementById("project-modal");
+const pModalImg = document.getElementById("modal-img");
+const pModalTitle = document.getElementById("modal-title");
+const pModalDesc = document.getElementById("modal-desc");
+const pModalGithub = document.getElementById("modal-github");
+const pCloseBtn = document.querySelector(".close-modal");
+
+// Select all project cards
+const projectCards = document.querySelectorAll("[data-open-modal]");
+
+// When clicking a project card → open modal
+projectCards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    const projectItem = card.closest(".project-item");
+
+    // extract data from attributes
+    const title = projectItem.getAttribute("data-title");
+    const desc = projectItem.getAttribute("data-desc");
+    const github = projectItem.getAttribute("data-github");
+    const imgSrc = card.querySelector("img").src;
+
+    // populate modal
+    pModalTitle.textContent = title;
+    pModalDesc.textContent = desc;
+    pModalGithub.href = github;
+    pModalImg.src = imgSrc;
+
+    // show modal
+    projectModal.style.display = "flex";
+  });
+});
+
+// Close modal when clicking X
+pCloseBtn.addEventListener("click", () => {
+  projectModal.style.display = "none";
+});
+
+// Close modal when clicking outside modal box
+window.addEventListener("click", (e) => {
+  if (e.target === projectModal) {
+    projectModal.style.display = "none";
+  }
+});
